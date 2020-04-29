@@ -1,14 +1,26 @@
 <template>
   <div style="margin-bottom: 100px">
-    <div v-for="(item,index) in formDataList" :key="index"
+    <!--<div v-for="(item,index) in formDataList" :key="index"
           >
       <h1 style="margin: 20px;border-bottom: solid 1px gray">Form {{index+1}}</h1>
       <tForm  :formData="item" v-model="formDataList[index]" >
       </tForm>
-    </div>
-    <div style="position: fixed;right:10px;bottom: 10px">
+    </div>-->
+    <b-container style="margin-top: 20px">
+      <b-table striped hover :items="formDataList" :fields="fields" bordered style="">
+        <template v-slot:cell(no)="data">
+          {{data.index+1}}
+        </template>
+        <template v-slot:cell(action)="data">
+          <button @click="gotoViewForm(data.item)"><b-icon icon="eye-fill"></b-icon></button>
+
+
+        </template>
+      </b-table>
+    </b-container>
+    <!--<div style="position: fixed;right:10px;bottom: 10px">
       <b-button variant="success" @click="updatedForm">update</b-button>
-    </div>
+    </div>-->
 
   </div>
 </template>
@@ -23,7 +35,59 @@ export default {
     return {
       formDataList:[
       ],
-      msg:'testing'
+      msg:'testing',
+      fields: [
+        {
+          key: 'no',
+          label: 'No',
+          sortable: false
+        },
+        {
+          key: 'formPatNUmber',
+          label: 'Form ID ',
+          sortable: true
+        },
+        {
+          key: 'formPatName',
+          label: 'Name',
+          sortable: true
+        },
+        {
+          key: 'formAge',
+          label: 'Age',
+          sortable: true
+        },
+        {
+          key: 'formStatus',
+          label: 'Status',
+          sortable: true
+        },
+        {
+          key: 'formSymptomsPresent',
+          label: 'Symptoms',
+          sortable: true
+        },
+        {
+          key: 'formStatusDate',
+          label: 'Created',
+          sortable: true
+        },
+        {
+          key: 'formStatusReportDate',
+          label: 'Sent to CDC',
+          sortable: true
+        },
+        {
+          key: 'formPatNumber',
+          label:'Phone',
+          sortable: true
+        },
+        {
+          key: 'action',
+          label:'Action',
+          sortable: false
+        },
+       ],
     }
   },
   created() {
@@ -48,7 +112,15 @@ export default {
           console.log(data)
 
         })
+    },
+    gotoViewForm(item){
+      this.$router.push({name:'viewForm',params:item})
     }
   }
 }
 </script>
+<style>
+  .table th, .table td{
+    padding: 0!important;
+  }
+</style>

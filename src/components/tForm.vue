@@ -1,6 +1,27 @@
 <template>
   <b-container>
     <b-form @submit="onSubmit" @reset="onReset" v-if="formData1" >
+      <h3>Patient information</h3>
+      <div style="display: flex">
+        <label style="padding:0 5px;white-space: nowrap">Name: </label>
+        <b-form-input v-model="formData1.formPatName" @input="handleInput" size="sm" ></b-form-input>
+      </div>
+      <h3>Interviewer information</h3>
+      <div style="display: flex">
+        <label style="padding:0 5px;white-space: nowrap">Name of interviewer: Last </label>
+        <b-form-input v-model="formData1.formILast" @input="handleInput" size="sm" ></b-form-input>
+        <label style="padding-left: 5px">First </label>
+        <b-form-input v-model="formData1.formIFirst" @input="handleInput" size="sm" ></b-form-input>
+      </div>
+      <div style="display: flex">
+        <label style="padding-left: 5px">Affiliation/Organization: </label>
+        <b-form-input  size="sm" v-model="formData1.formIOrganization" @input="handleInput" ></b-form-input>
+        <label style="padding-left: 5px">Telephone </label>
+        <b-form-input  size="sm" v-model="formData1.formIPhone" @input="handleInput"></b-form-input>
+        <label style="padding-left: 5px">Email </label>
+        <b-form-input  size="sm" type="email" v-model="formData1.formIEmail" @input="handleInput" ></b-form-input>
+      </div>
+      <h3>Basic information</h3>
       <div style="display: flex;width: 100%">
         <div class="box padding10" style="text-align: left;width: 40%">
           <t-single-select
@@ -338,7 +359,7 @@
           <t-single-select
             v-model="formData1.formPrevHealthCareWorker"
             group_label="Does the patient have a history of being in a healthcare facility (as a patient, worker or visitor) in China?"
-            group_id="formHealthCareWorker"
+            group_id="formPrevHealthCareWorker"
             :candidates="[
               'Yes',
               'No',
@@ -419,6 +440,7 @@
         <b-form-radio name="form-state" value="B">No</b-form-radio>
         <b-form-radio name="form-state" value="B">Unk</b-form-radio>
       </div>
+      <h3>Symptoms, clinical course, past medical history and social history</h3>
       <div style="margin-top: 10px;text-align: left">
         <div style="display: flex; border: solid 1px gray">
           <div style="width: 60%;border: solid 1px gray">
@@ -598,8 +620,8 @@
           </div>
         </div>
         <div style="border: solid 1px gray;display: flex" class="box">
-          <label style="text-align: right" for="input-small">Other, specify:</label>
-          <b-form-input id="input-small" size="sm" style="flex: 1" ></b-form-input>
+          <label style="text-align: right" >Other, specify:</label>
+          <b-form-input  size="sm" style="flex: 1" ></b-form-input>
         </div>
 
       </div>
@@ -736,8 +758,8 @@
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
             <div style="display: flex" class="">
-              <label style="text-align: right" for="input-small">(If YES, specify)</label>
-              <b-form-input id="input-small" size="sm" style="flex: 1" ></b-form-input>
+              <label style="text-align: right" >(If YES, specify)</label>
+              <b-form-input size="sm" style="flex: 1" ></b-form-input>
             </div>
           </div>
         </div>
@@ -757,8 +779,8 @@
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
             <div style="display: flex" class="">
-              <label style="text-align: right" for="input-small">(If YES, specify)</label>
-              <b-form-input id="input-small" size="sm" style="flex: 1" ></b-form-input>
+              <label style="text-align: right" >(If YES, specify)</label>
+              <b-form-input  size="sm" style="flex: 1" ></b-form-input>
             </div>
           </div>
         </div>
@@ -1065,5 +1087,18 @@ export default {
   }
   .padding10{
     padding: 10px;
+  }
+  label{
+    padding: 0 5px;
+    margin: auto;
+  }
+  h3{
+    color: cornflowerblue;
+    text-align: left;
+  }
+  .form-control{
+    border: 0!important;
+    border-bottom: solid 1px black!important;
+    border-radius: 0!important;
   }
 </style>
