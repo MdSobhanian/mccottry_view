@@ -5,6 +5,8 @@
       <div style="display: flex">
         <label style="padding:0 5px;white-space: nowrap">Name: </label>
         <b-form-input v-model="formData1.formPatName" @input="handleInput" size="sm" ></b-form-input>
+        <label style="padding:0 5px;white-space: nowrap">Phone: </label>
+        <b-form-input v-model="formData1.formPatNumber" @input="handleInput" size="sm" ></b-form-input>
       </div>
       <h3>Interviewer information</h3>
       <div style="display: flex">
@@ -33,6 +35,7 @@
               'PUI, tested negative',
               'Presumptive case (positive local test), confirmatory tested negative',
               'Laboratory-confirmed case',
+              'Presumptive case (positive local test), confirmatory testing pending',
               'Probable case'
             ]"
             v-on:input="handleInput"
@@ -253,8 +256,9 @@
               'American Indian/Alaska Native',
               'Black',
               'Native Hawaiian/Other Pacific',
+              'White',
+              'Unknown',
               'Other',
-              'Unknow',
             ]"
             v-on:input="handleInput"
             :_style="{display:'flex','justify-content':'space-around','flex-wrap':'wrap'}"
@@ -394,12 +398,13 @@
               <div style="flex: 1">
                 <b-form-radio name="formLastTwoWeeksExposure" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput" value="Exposure to a cluster of patients with severe acute lower respiratory distress of unknown etiology">Exposure to a cluster of patients with severe acute lower respiratory distress of unknown etiology
                 </b-form-radio>
-                <b-form-radio v-model="formData1.formLastTwoWeeksExposure" @input="handleInput" name="formLastTwoWeeksExposure" value="Travel to Hubei">Travel to Hubei </b-form-radio>
+
                <div style="display: flex">
                  <b-form-radio v-model="formData1.formLastTwoWeeksExposure" @input="handleInput" name="formLastTwoWeeksExposure" value="Other">Other </b-form-radio>
                  <label style="padding-left: 5px">specify:</label>
                  <b-form-input  size="sm" ></b-form-input>
                </div>
+                <b-form-radio v-model="formData1.formLastTwoWeeksExposure" @input="handleInput" name="formLastTwoWeeksExposure" value="Unknown">Unknown </b-form-radio>
               </div>
 
             </div>
@@ -420,7 +425,7 @@
               </div>
 
             </div>
-            <div style="display: flex;justify-content: space-around">
+            <div style="display: flex;justify-content: space-around; ">
               <b-form-radio name="ethnicity" value="A">Unknown</b-form-radio>
               <div style="display: flex">
                 <b-form-radio v-model="formData1.formIdentificationType" @input="handleInput" name="formIdentificationType" value="Other">Other, specify:</b-form-radio>
@@ -433,13 +438,21 @@
 
         </div>
       </div>
-
-      <div style="display: flex;margin-top: 20px" >
-        <div>Collected from (check all that apply):</div>
-        <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-        <b-form-radio name="form-state" value="B">No</b-form-radio>
-        <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+      <div style="text-align: left; margin-top: 20px; width: 300px;">
+        <t-single-select
+          v-model="formData1.formCollectedFrom"
+          group_label="Collected from (check all that apply):?"
+          group_id="formCollectedFrom"
+          :candidates="[
+              'Yes',
+              'No',
+              'Unknown',
+            ]"
+          v-on:input="handleInput"
+          :_style="{'display':'flex','justify-content':'space-around'}"
+        />
       </div>
+
       <h3>Symptoms, clinical course, past medical history and social history</h3>
       <div style="margin-top: 10px;text-align: left">
         <div style="display: flex; border: solid 1px gray">
@@ -1041,6 +1054,14 @@
             </div>
             <div style="width: 84px" class=""></div>
           </div>
+          <div style="display: flex; height: 50px;"></div>
+          <div style="display: flex; padding: 5px 20px 0 20px; border: none" class="box">
+            <label>Name:</label>
+            <b-form-input  size="md" ></b-form-input>
+            <label>Phone:</label>
+            <b-form-input  size="md" ></b-form-input>
+          </div>
+          <b-button size="sm"  variant="success" v-on:click="addelement" style="width: 70px; font-weight: bold; margin-top: 20px; margin-left: 20px; float: left">+ADD</b-button>
         </div>
       </div>
     </b-form>
@@ -1048,6 +1069,12 @@
 </template>
 <script>
   import tSingleSelect from "./tSingleSelect";
+  import Vue from 'vue/dist/vue.esm'
+  import VueAppend from 'vue-append'
+
+  // use the plugin
+  Vue.use(VueAppend);
+
 export default {
   components:{tSingleSelect},
   props:{
@@ -1062,6 +1089,8 @@ export default {
   data(){
     return{
       formData1: this.formData,
+      isAdd:false,
+      html:''
     }
   },
   methods:{
@@ -1073,6 +1102,9 @@ export default {
 
     },
     onReset(){
+
+    },
+    addelement(){
 
     }
   }
