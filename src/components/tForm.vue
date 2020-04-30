@@ -372,43 +372,18 @@
             v-on:input="handleInput"
             :_style="{display:'flex','justify-content':'space-around','flex-wrap':'wrap'}"
           />
+          <t-multi-select
+            v-model="formData1.formLastTwoWeeksExposure"
+            group_label="In the 14 days prior to illness onset, did the patient have any of the following exposures (check all that apply):"
+            group_id="formCollectedFrom"
+            :candidates="[
+              'Travel to Wuhan','Travel to mainland China','Travel to other non-US country','Household contact with another \n lab-confirmed COVID-19 case-patient','Community contact with another ab-confirmed COVID-19 case-patient','Any healthcare contact with another lab-confirmed COVID-19 case-patient','Patient','Visitor','HCW','Animal exposure','Exposure to a aluster of patients with severe acute lower respiratory distress of unknown etiology','Other','Unknown'
+            ]"
+            v-on:input="handleInput"
+            :_style="{'column-count': 3}"
 
-          <b-form-group label="In the 14 days prior to illness onset, did the patient have any of the following exposures (check all that apply):">
-            <div style="display: flex;justify-content: space-around">
-              <div style="flex: 1">
-                <b-form-radio name="formLastTwoWeeksExposure" value="Travel to Wuhan" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Travel to Wuhan</b-form-radio>
-                <b-form-radio name="formLastTwoWeeksExposure" value="Travel to Hubei" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Travel to Hubei </b-form-radio>
-                <b-form-radio name="formLastTwoWeeksExposure" value="Travel to mainland China" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Travel to mainland China </b-form-radio>
-                <div style="display: flex">
-                  <b-form-radio name="formLastTwoWeeksExposure" value="Travel to other non-US country" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Travel to other non-US country  </b-form-radio>
-                  <label style="padding-left: 5px">specify:</label>
-                  <b-form-input  size="sm" ></b-form-input>
-                </div>
-                <b-form-radio name="formLastTwoWeeksExposure" value="Household contact with another lab-confirmed COVID-19 case-patient" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Household contact with another lab-confirmed COVID-19 case-patient </b-form-radio>
-              </div>
-              <div style="flex: 1">
-                <b-form-radio name="formLastTwoWeeksExposure" value="Community contact with another ab-confirmed COVID-19 case-patient" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Community contact with another ab-confirmed COVID-19 case-patient</b-form-radio>
-                <b-form-radio name="formLastTwoWeeksExposure" value="Any healthcare contact with another lab-confirmed COVID-19 case-patient" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Any healthcare contact with another lab-confirmed COVID-19 case-patient</b-form-radio>
-                <b-form-radio name="formLastTwoWeeksExposure" value="Patient" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Patient</b-form-radio>
-                <b-form-radio name="formLastTwoWeeksExposure" value="Visitor" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Visitor</b-form-radio>
+          />
 
-                <b-form-radio name="formLastTwoWeeksExposure" value="HCW" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">HCW</b-form-radio>
-                <b-form-radio name="formLastTwoWeeksExposure" value="Animal exposure" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput">Animal exposure</b-form-radio>
-              </div>
-              <div style="flex: 1">
-                <b-form-radio name="formLastTwoWeeksExposure" v-model="formData1.formLastTwoWeeksExposure" @input="handleInput" value="Exposure to a cluster of patients with severe acute lower respiratory distress of unknown etiology">Exposure to a cluster of patients with severe acute lower respiratory distress of unknown etiology
-                </b-form-radio>
-
-               <div style="display: flex">
-                 <b-form-radio v-model="formData1.formLastTwoWeeksExposure" @input="handleInput" name="formLastTwoWeeksExposure" value="Other">Other </b-form-radio>
-                 <label style="padding-left: 5px">specify:</label>
-                 <b-form-input  size="sm" ></b-form-input>
-               </div>
-                <b-form-radio v-model="formData1.formLastTwoWeeksExposure" @input="handleInput" name="formLastTwoWeeksExposure" value="Unknown">Unknown </b-form-radio>
-              </div>
-
-            </div>
-          </b-form-group>
         </div>
       </div>
       <div style="display: flex;width: 100%">
@@ -1055,13 +1030,7 @@
             <div style="width: 84px" class=""></div>
           </div>
           <div style="display: flex; height: 50px;"></div>
-          <div style="display: flex; padding: 5px 20px 0 20px; border: none" class="box">
-            <label>Name:</label>
-            <b-form-input  size="md" ></b-form-input>
-            <label>Phone:</label>
-            <b-form-input  size="md" ></b-form-input>
-          </div>
-          <b-button size="sm"  variant="success" v-on:click="addelement" style="width: 70px; font-weight: bold; margin-top: 20px; margin-left: 20px; float: left">+ADD</b-button>
+          <t-input-dyamic-array v-model="formData1.contactnames" @input="handleInput"/>
         </div>
       </div>
     </b-form>
@@ -1069,14 +1038,10 @@
 </template>
 <script>
   import tSingleSelect from "./tSingleSelect";
-  import Vue from 'vue/dist/vue.esm'
-  import VueAppend from 'vue-append'
-
-  // use the plugin
-  Vue.use(VueAppend);
-
+  import tMultiSelect from "./tMultiSelect";
+  import TInputDyamicArray from "./tInputDyamicArray";
 export default {
-  components:{tSingleSelect},
+  components:{TInputDyamicArray, tSingleSelect,tMultiSelect},
   props:{
     formData:{
       type:Object,
@@ -1096,7 +1061,7 @@ export default {
   methods:{
     handleInput(){
       this.$emit('input', this.formData1)
-      console.log('On parent:',this.formData1.formPneumonia)
+      //console.log('On parent:',this.formData1)
     },
     onSubmit(){
 

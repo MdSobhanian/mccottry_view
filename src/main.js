@@ -9,8 +9,7 @@ Vue.use(IconsPlugin)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-import VueAppend from 'vue-append'
-Vue.use(VueAppend)
+
 
 Vue.config.productionTip = false
 window.axios = require('axios');
