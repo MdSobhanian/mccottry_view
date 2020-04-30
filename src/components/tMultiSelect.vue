@@ -14,14 +14,6 @@
         </b-checkbox>
       </div>
 
-      <!--<b-checkbox-group
-        :options="candidates"
-        v-model="selected"
-        @change="tSelect"
-      >
-
-      </b-checkbox-group>-->
-
     </div>
   </b-form-group>
 </template>
@@ -34,7 +26,7 @@
       }
     },
     created() {
-      console.log('valuse',this.value)
+      console.log('values',this.value)
       if (this.value===undefined)return
       this.selected=JSON.parse(this.value)
       this.candidates.forEach((c_item,c_index)=>{

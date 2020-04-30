@@ -29,10 +29,10 @@
     },
     methods:{
       updatedForm(){
-        console.log(this.formDataList)
+        // console.log(this.formDataList)
         window.axios.post('http://3.15.187.108:3000/submitForm',[this.formDataList]).then(({data})=>{
-          console.log(data)
-
+          console.log('asdasdas',data)
+          this.$router.push({name:'HelloWorld',params:'1'})
         })
       },
       gotoFormlist(){

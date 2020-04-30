@@ -413,15 +413,14 @@
 
         </div>
       </div>
-      <div style="text-align: left; margin-top: 20px; width: 300px;">
+      <div style="text-align: left; margin-top: 20px; width: 400px;">
         <t-single-select
           v-model="formData1.formCollectedFrom"
           group_label="Collected from (check all that apply):?"
           group_id="formCollectedFrom"
           :candidates="[
-              'Yes',
-              'No',
-              'Unknown',
+              'Patient Interview',
+              'Medical record review',
             ]"
           v-on:input="handleInput"
           :_style="{'display':'flex','justify-content':'space-around'}"
