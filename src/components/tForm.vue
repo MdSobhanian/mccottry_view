@@ -1002,68 +1002,76 @@
         </div>
         <div style="flex: 1">
           <div style="display: flex;">
-            <div style="flex: 1"  class="box">Specimen Type</div>
+            <div style="flex: 1; width: 80px;"  class="box">Specimen Type</div>
             <div style="width: 84px" class="box">Specimen ID</div>
-            <div style="width: 84px" class="box">Date Collected</div>
-            <div style="width: 84px" class="box">State Lab Tested</div>
-            <div style="width: 84px" class="box">State Lab Result</div>
-            <div style="width: 84px" class="box">Sent to CDC</div>
+            <div style="width: 120px" class="box">Date Collected</div>
+            <div style="width: 74px" class="box">State Lab Tested</div>
+            <div style="width: 74px" class="box">State Lab Result</div>
+            <div style="width: 54px" class="box">Sent to CDC</div>
             <div style="width: 84px" class="box">CDC Lab Result</div>
           </div>
           <div style="display: flex; " class="box">
-            <div style="flex: 1;border-right: solid 1px gray;" class="">NP Swab
+            <div style="flex: 1;border-right: solid 1px gray; width: 80px;" class="">NP Swab
             </div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity" value="A"></b-form-radio>
+            <div style="width: 84px; padding-left: 5px; padding-right: 5px;" class="">
+              <b-form-input v-model="formData1.specNPSwabID" size="sm" ></b-form-input>
             </div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity1" value="A"></b-form-radio>
+            <div style="width: 120px; padding-left: 5px; padding-right: 5px;" class="">
+              <b-form-datepicker  size="sm" class="mb-2" :date-format-options="{ month: 'numeric', day: 'numeric',year: 'numeric' }" v-on:input="handleInput" v-model="formData1.specNPSwabDate"></b-form-datepicker>
             </div>
-            <div style="width: 84px" class=""></div>
+            <div style="width: 74px; padding-left: 5px; padding-right: 5px;" class="">
+              <b-form-input v-model="formData1.specLabTest" size="sm" ></b-form-input>
+            </div>
+            <div style="width: 74px; padding-left: 5px; padding-right: 5px;" class="">
+              <b-form-input v-model="formData1.specLabTestresult" size="sm" ></b-form-input>
+            </div>
+            <div style="width: 54px; padding-left: 5px; padding-right: 5px;" class="">
+              <b-form-checkbox v-model="formData1.specSendCDC" name="specSendCDC" value="Sent to CDC"></b-form-checkbox>
+            </div>
+            <div style="width: 84px; padding-left: 5px; padding-right: 5px;" class="">
+              <b-form-input v-model="formData1.specCDCResults" size="sm" ></b-form-input>
+            </div>
           </div>
           <div style="display: flex; " class="box">
-            <div style="flex: 1;border-right: solid 1px gray;" class="">OP Swab</div>
+            <div style="flex: 1;border-right: solid 1px gray;width: 80px;" class="">OP Swab</div>
             <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
+            <div style="width: 120px" class="">
               <b-form-radio name="ethnicity2" value="A"></b-form-radio>
             </div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
+            <div style="width: 74px" class=""></div>
+            <div style="width: 74px" class=""></div>
+            <div style="width: 54px" class="">
               <b-form-radio name="ethnicity3" value="A"></b-form-radio>
             </div>
             <div style="width: 84px" class=""></div>
           </div>
           <div style="display: flex; " class="box">
-            <div style="flex: 1;border-right: solid 1px gray;" class="">Sputum</div>
+            <div style="flex: 1;border-right: solid 1px gray;width: 80px;" class="">Sputum</div>
             <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity4" value="A"></b-form-radio>
+            <div style="width: 120px" class="">
+              <b-form-check name="ethnicity4" value="A"></b-form-check>
             </div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
+            <div style="width: 74px" class=""></div>
+            <div style="width: 74px" class=""></div>
+            <div style="width: 54px" class="">
               <b-form-radio name="ethnicity5" value="A"></b-form-radio>
             </div>
             <div style="width: 84px" class=""></div>
           </div>
           <div style="display: flex; " class="box">
-            <div style="flex: 1;border-right: solid 1px gray;" class="">
+            <div style="flex: 1;border-right: solid 1px gray; width: 80px;" class="">
               <div style="display: flex;flex-wrap: wrap">
                 <div name="ethnicity6" value="A">Other, specify:</div>
                 <b-form-input  size="sm" ></b-form-input>
               </div>
             </div>
             <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
+            <div style="width: 120px" class="">
 
             </div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class=""></div>
-            <div style="width: 84px" class="">
+            <div style="width: 74px" class=""></div>
+            <div style="width: 74px" class=""></div>
+            <div style="width: 54px" class="">
             </div>
             <div style="width: 84px" class=""></div>
           </div>
