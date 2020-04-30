@@ -615,9 +615,15 @@
 
       <div style="display: flex;margin-top: 20px" >
         <div>Pre-existing medical conditions?</div>
-        <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-        <b-form-radio name="form-state" value="B">No</b-form-radio>
-        <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+        <b-form-group >
+          <div style="display: flex; justify-content: space-around" >
+            <b-form-radio v-model="formData1.preExisting" @input="handleInput" name="preExisting" value="Yes">Yes</b-form-radio>
+            <b-form-radio v-model="formData1.preExisting" @input="handleInput" name="preExisting" value="No">No</b-form-radio>
+            <b-form-radio v-model="formData1.preExisting" @input="handleInput" name="preExisting" value="Unk">Unk</b-form-radio>
+          </div>
+        </b-form-group>
+
+
       </div>
       <div style="margin-top: 10px;text-align: left">
         <div style="display: flex;text-align: left">
@@ -627,11 +633,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preELung" @input="handleInput" name="preELung" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preELung" @input="handleInput" name="preELung" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preELung" @input="handleInput" name="preELung" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -645,11 +650,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preEDiabetes" @input="handleInput" name="preEDiabetes" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preEDiabetes" @input="handleInput" name="preEDiabetes" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preEDiabetes" @input="handleInput" name="preEDiabetes" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -663,11 +667,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preECardio" @input="handleInput" name="preECardio" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preECardio" @input="handleInput" name="preECardio" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preECardio" @input="handleInput" name="preECardio" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -681,11 +684,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preERenal" @input="handleInput" name="preERenal" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preERenal" @input="handleInput" name="preERenal" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preERenal" @input="handleInput" name="preERenal" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -699,11 +701,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preELiver" @input="handleInput" name="preELiver" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preELiver" @input="handleInput" name="preELiver" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preELiver" @input="handleInput" name="preELiver" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -717,11 +718,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preEImmuno" @input="handleInput" name="preEImmuno" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preEImmuno" @input="handleInput" name="preEImmuno" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preEImmuno" @input="handleInput" name="preEImmuno" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -736,11 +736,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preENeurological" @input="handleInput" name="preENeurological" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preENeurological" @input="handleInput" name="preENeurological" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preENeurological" @input="handleInput" name="preENeurological" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -757,11 +756,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preENeurologicalOther" @input="handleInput" name="preENeurologicalOther" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preENeurologicalOther" @input="handleInput" name="preENeurologicalOther" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preENeurologicalOther" @input="handleInput" name="preENeurologicalOther" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -778,11 +776,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preEPregnant" @input="handleInput" name="preEPregnant" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preEPregnant" @input="handleInput" name="preEPregnant" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preEPregnant" @input="handleInput" name="preEPregnant" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -796,11 +793,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preECurSmoker" @input="handleInput" name="preECurSmoker" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preECurSmoker" @input="handleInput" name="preECurSmoker" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preECurSmoker" @input="handleInput" name="preECurSmoker" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -814,11 +810,10 @@
           <div style="width: 25%;border: solid 1px gray" class="box">
             <b-form-group >
               <div style="display: flex; justify-content: space-around" >
-                <b-form-radio name="form-state" value="A">Yes</b-form-radio>
-                <b-form-radio name="form-state" value="B">No</b-form-radio>
-                <b-form-radio name="form-state" value="B">Unk</b-form-radio>
+                <b-form-radio v-model="formData1.preEPreSmoker" @input="handleInput" name="preEPreSmoker" value="Yes">Yes</b-form-radio>
+                <b-form-radio v-model="formData1.preEPreSmoker" @input="handleInput" name="preEPreSmoker" value="No">No</b-form-radio>
+                <b-form-radio v-model="formData1.preEPreSmoker" @input="handleInput" name="preEPreSmoker" value="Unk">Unk</b-form-radio>
               </div>
-
             </b-form-group>
           </div>
           <div style="width: 40%;border: solid 1px gray" class="box">
@@ -835,84 +830,112 @@
             <div class="box" style="width: 42px">Pend</div>
             <div class="box" style="width: 42px">Not done</div>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">Influenza rapid Ag</div> <b-form-radio name="ethnicity" value="A">A</b-form-radio>  <b-form-radio name="ethnicity" value="A">B</b-form-radio>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio class="box" v-model="formData1.testInfluAG" @input="handleInput" name="testInfluAG" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio class="box" v-model="formData1.testInfluAG" @input="handleInput" name="testInfluAG" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio class="box" v-model="formData1.testInfluAG" @input="handleInput" name="testInfluAG" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio class="box" v-model="formData1.testInfluAG" @input="handleInput" name="testInfluAG" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">Influenza PCR </div> <b-form-radio name="ethnicity" value="A">A</b-form-radio>  <b-form-radio name="ethnicity" value="A">B</b-form-radio>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testInfluPCR" @input="handleInput" name="testInfluPCR" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testInfluPCR" @input="handleInput" name="testInfluPCR" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testInfluPCR" @input="handleInput" name="testInfluPCR" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testInfluPCR" @input="handleInput" name="testInfluPCR" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">RSV</div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testRSV" @input="handleInput" name="testRSV" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testRSV" @input="handleInput" name="testRSV" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testRSV" @input="handleInput" name="testRSV" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testRSV" @input="handleInput" name="testRSV" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">H. metapneumovirus</div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testHmetapneu" @input="handleInput" name="testHmetapneu" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testHmetapneu" @input="handleInput" name="testHmetapneu" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testHmetapneu" @input="handleInput" name="testHmetapneu" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testHmetapneu" @input="handleInput" name="testHmetapneu" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">Parainfluenza (1-4)</div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testParaInflu" @input="handleInput" name="testParaInflu" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testParaInflu" @input="handleInput" name="testParaInflu" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testParaInflu" @input="handleInput" name="testParaInflu" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testParaInflu" @input="handleInput" name="testParaInflu" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">Adenovirus </div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testAdenovirus" @input="handleInput" name="testAdenovirus" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testAdenovirus" @input="handleInput" name="testAdenovirus" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testAdenovirus" @input="handleInput" name="testAdenovirus" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testAdenovirus" @input="handleInput" name="testAdenovirus" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">Rhinovirus/enterovirus</div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testRhinovirus" @input="handleInput" name="testRhinovirus" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testRhinovirus" @input="handleInput" name="testRhinovirus" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testRhinovirus" @input="handleInput" name="testRhinovirus" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testRhinovirus" @input="handleInput" name="testRhinovirus" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">Coronavirus (OC43, 229E,
@@ -920,45 +943,61 @@
                 </div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testCoronavirus" @input="handleInput" name="testCoronavirus" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testCoronavirus" @input="handleInput" name="testCoronavirus" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testCoronavirus" @input="handleInput" name="testCoronavirus" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testCoronavirus" @input="handleInput" name="testCoronavirus" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">M. pneumoniae</div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testMpneumoniae" @input="handleInput" name="testMpneumoniae" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testMpneumoniae" @input="handleInput" name="testMpneumoniae" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testMpneumoniae" @input="handleInput" name="testMpneumoniae" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testMpneumoniae" @input="handleInput" name="testMpneumoniae" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex; flex-wrap: wrap">
                 <div style="white-space: nowrap">C. pneumoniae
                 </div>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testCpneumoniae" @input="handleInput" name="testCpneumoniae" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testCpneumoniae" @input="handleInput" name="testCpneumoniae" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testCpneumoniae" @input="handleInput" name="testCpneumoniae" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testCpneumoniae" @input="handleInput" name="testCpneumoniae" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
-          <div style="display: flex;">
+          <div style="display: flex; height: 25px;">
             <div style="flex: 1" class="box">
               <div style="display: flex;">
                 <div style="white-space: nowrap">Other, Specify:</div>
                 <b-form-input size="sm" ></b-form-input>
               </div>
             </div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
-            <div class="box" style="width: 42px"><b-form-radio name="ethnicity" value="A"></b-form-radio></div>
+            <b-form-group >
+              <div style="display: flex; justify-content: space-around" >
+                <b-form-radio v-model="formData1.testOther" @input="handleInput" name="testOther" value="Pos" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testOther" @input="handleInput" name="testOther" value="Neg" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testOther" @input="handleInput" name="testOther" value="Pend" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+                <b-form-radio v-model="formData1.testOther" @input="handleInput" name="testOther" value="Not done" style="width: 42px; border: solid 1px gray;"></b-form-radio>
+              </div>
+            </b-form-group>
           </div>
         </div>
         <div style="flex: 1">
@@ -981,7 +1020,7 @@
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity" value="A"></b-form-radio>
+              <b-form-radio name="ethnicity1" value="A"></b-form-radio>
             </div>
             <div style="width: 84px" class=""></div>
           </div>
@@ -989,12 +1028,12 @@
             <div style="flex: 1;border-right: solid 1px gray;" class="">OP Swab</div>
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity" value="A"></b-form-radio>
+              <b-form-radio name="ethnicity2" value="A"></b-form-radio>
             </div>
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity" value="A"></b-form-radio>
+              <b-form-radio name="ethnicity3" value="A"></b-form-radio>
             </div>
             <div style="width: 84px" class=""></div>
           </div>
@@ -1002,19 +1041,19 @@
             <div style="flex: 1;border-right: solid 1px gray;" class="">Sputum</div>
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity" value="A"></b-form-radio>
+              <b-form-radio name="ethnicity4" value="A"></b-form-radio>
             </div>
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class=""></div>
             <div style="width: 84px" class="">
-              <b-form-radio name="ethnicity" value="A"></b-form-radio>
+              <b-form-radio name="ethnicity5" value="A"></b-form-radio>
             </div>
             <div style="width: 84px" class=""></div>
           </div>
           <div style="display: flex; " class="box">
             <div style="flex: 1;border-right: solid 1px gray;" class="">
               <div style="display: flex;flex-wrap: wrap">
-                <div name="ethnicity" value="A">Other, specify:</div>
+                <div name="ethnicity6" value="A">Other, specify:</div>
                 <b-form-input  size="sm" ></b-form-input>
               </div>
             </div>
